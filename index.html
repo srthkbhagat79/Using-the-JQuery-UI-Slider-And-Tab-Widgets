@@ -1,0 +1,92 @@
+<!--
+Name:Sarthak Bhagat
+email: Sarthak_bhagat@student.uml.edu
+Course name: GUI I
+Assingment #7- Using the JQuery UI Slider And Tab Widgets
+File type: .html file
+Sources used: https://www.npmjs.com/package/rules-js
+https://www.w3schools.com
+https://getbootstrap.com/docs/4.0/components/carousel/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/hw7.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Dynamic Calculator Using the JQuery UI Slider And Tab Widgets</title>
+</head>
+
+
+<body>
+  <!-- This was used to create a caraousel at the top of the page -->
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/calc.jpg" class="d-block w-100" alt="...">
+        <div class="row">
+          <div class="container-fluid">
+
+            <!-- The following allows the user to enter the values for the calculated results desired -->
+            <form id="insert">
+              <h1>Multiplication Table</h1>
+              <!--This provides information about the table, its purpose and its rules -->
+              <p>The calculator will provide a table based on user input. These are some rules you should follow:<br> (1)The table only accepts integer value. Strictly no decimals<br>
+                (2)Starting values has to be greater than the ending values
+              <p>
+
+              <h3>Interactive Dynamic Multiplication Table</h3>
+              <!-- Taking in user Inputs -->
+              Enter Minimum Column Value <input class="InsertValues" name="mic" id="mic" type="number"><br>
+              <div id="startRowSlider"></div>
+
+              Enter Maximum Column Value <input class="InsertValues" name="mac" id="mac" type="number"><br>
+              <div id="endRowSlider"></div>
+
+              Enter Minimum Row Value <input class="InsertValues" name="mir" id="mir" type="number"><br>
+              <div id="startColumnSlider"></div>
+
+              Enter Maximum Row Value <input class="InsertValues" name="mar" id="mar" type="number"><br>
+              <div id="endColumnSlider"></div>
+
+              <!-- Button added and on click displays the result if all things are inserted correctly -->
+              <button type="submit" value="Submit">Submit</button>
+              <button class="btn btn-dark" type="button" id="save" onclick='tableTracker()'>Save</button>
+            </form>
+          </div>
+
+          <div class="container-fluid pt-3" id="multiplicationtable">
+            <!-- The following will give calculated results in the form of a table -->
+            <div class="overflow" style="overflow: scroll;">
+              <table class="table table-bordered" id="print_table">
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11 mx-auto">
+          <h3> Tables</h3>
+        </div>
+
+        <div class="col-11 mx-auto" id="tabs">
+          <ul></ul>
+        </div>
+
+        <!-- Added Scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"></script>
+        <script src="js/hw7.js"></script>
+
+</body>
+
+</html>
